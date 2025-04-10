@@ -27,7 +27,7 @@ core_compute_area_mm2 = cost_model.calc_compute_core_area_mm2(
     cost_model.sram_bit_cell_density_7nm,
 )
 io_die_area_mm2 = cost_model.calc_io_die_area_mm2(
-    2**25,
+    2**25,        ## this should be 32 MB. This is not matching what is written as comment in line 5
     cost_model.PCIE5,
     32,           ## this should be the number of PCIe phys
     8,            ## this should be the number of nvlinks
