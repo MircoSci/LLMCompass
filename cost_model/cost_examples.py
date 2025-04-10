@@ -20,17 +20,17 @@ print(
 
 exit(0)
 core_compute_area_mm2 = cost_model.calc_compute_core_area_mm2(
-    32,
-    16,
-    2**18,
+    32,            ## this should be the vector width
+    16,            ## this should be the systolic array
+    2**18,         ## this should be the 256 kb cache core
     cost_model.transistor_density_7nm,
     cost_model.sram_bit_cell_density_7nm,
 )
 io_die_area_mm2 = cost_model.calc_io_die_area_mm2(
     2**25,
     cost_model.PCIE5,
-    32,
-    8,
+    32,           ## this should be the number of PCIe phys
+    8,            ## this should be the number of nvlinks
     cost_model.transistor_density_7nm,
     cost_model.sram_bit_cell_density_7nm,
 )
